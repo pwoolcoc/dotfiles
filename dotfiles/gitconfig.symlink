@@ -1,8 +1,13 @@
 [user]
 	name = Paul Woolcock
-	email = pwoolcoc@umflint.edu
+	email = pwoolcoc@gmail.com
 [push]
     default = upstream
 
 [core]
 	editor = /usr/bin/vim
+
+[alias]
+    co = checkout
+    discard = checkout --
+    cleanall = clean -xfd
