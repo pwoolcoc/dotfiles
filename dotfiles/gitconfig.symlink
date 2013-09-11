@@ -11,3 +11,5 @@
     co = checkout
     discard = checkout --
     cleanall = clean -xfd
+    dif = diff --patience
+    sts = status -uno
