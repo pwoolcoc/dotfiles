@@ -53,3 +53,8 @@ if [ -f "$HOME/.profile.local" ] ; then
     . $HOME/.profile.local
 fi
 
+# Initialization for FDK command line tools.Fri Dec  5 14:28:45 2014
+FDK_EXE="/home/paul/bin/FDK/Tools/linux"
+PATH=${PATH}:"/home/paul/bin/FDK/Tools/linux"
+export PATH
+export FDK_EXE

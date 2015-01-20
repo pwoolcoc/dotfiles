@@ -1,0 +1,34 @@
+[general]
+accounts = woolcock_us
+ui = quiet
+
+[Account woolcock_us]
+localrepository = Local
+remoterepository = Remote
+status_backend = sqlite
+autorefresh = 1
+quick = 10
+
+[Repository Local]
+type = Maildir
+localfolders = /home/paul/mail/paul@woolcock.us
+sep = /
+
+[Repository Remote]
+type = IMAP
+ssl = yes
+cert_fingerprint = a3ddbcbeb852358d668ca894dd0968f5e5f557c9
+remotehost = box.woolcock.us
+remoteport = 993
+remoteuser = paul@woolcock.us
+keepalive = 60
+holdconnectionopen = yes
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+

@@ -22,7 +22,7 @@
 "                           ; does "2P, "3P, etc
 "
 
-call pathogen#infect()
+"call pathogen#infect()
 
 set nocompatible
 
@@ -57,15 +57,16 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupWrapping()
 au BufRead,BufNewFile *.json setlocal ft=javascript
 au BufRead,BufNewfile *.txt call s:setupWrapping()
 au BufRead,BufNewFile *.wsgi setlocal ft=python
-au BufRead,BufNewFile *.{rs,rc} setlocal ft=rust
 au BufNewFile,BufRead *.clj setlocal filetype=clojure
-au BufNewFile,BufRead *.{txt,md,markdown,mdown,mkd,mkdn} inoremap <buffer> `` “
-au BufNewFile,BufRead *.{txt,md,markdown,mdown,mkd,mkdn} inoremap <buffer> '' ”
-au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} setlocal tabstop=2 softtabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.{txt,md,markdown,mdown,mkd,mkdn,tex} setlocal spell
+au BufNewFile,BufRead *.{txt,md,markdown,mdown,mkd,mkdn} setlocal ft=markdown
 
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType make setlocal noexpandtab
+au FileType rust setlocal makeprg=cargo\ build
+au FileType markdown inoremap <buffer> `` “
+au FileType markdown inoremap <buffer> '' ”
+au FileType markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2 spell
+au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 cmap <C-K> <C-R>=expand("%:p:h") . "/" <CR>
@@ -98,6 +99,7 @@ nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>N :bp<CR>
 nnoremap <Leader>q :bd<CR>
+nnoremap <F5> :make<CR>
 nnoremap <F9> :CPPaste<CR>
 
 nnoremap [n :set norelativenumber<CR>
@@ -109,7 +111,7 @@ vmap <Left> <gv
 vmap <Right> >gv
 
 set background=dark
-colorscheme morning
+colorscheme darkblue
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

@@ -1,6 +1,6 @@
 [user]
 	name = Paul Woolcock
-	email = pwoolcoc@gmail.com
+	email = paul@woolcock.us
 [push]
     default = upstream
 
@@ -9,7 +9,8 @@
 
 [alias]
     co = checkout
+    cp = cherry-pick
     discard = checkout --
     cleanall = clean -xfd
     dif = diff --patience
-    sts = status -uno
+    st = status -uno

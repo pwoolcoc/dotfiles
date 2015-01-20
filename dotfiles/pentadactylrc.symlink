@@ -1,5 +1,7 @@
 map , <Leader>
 
+nmap -builtin s :tabopen s 
+nmap -builtin S :open s 
 nmap -builtin <Leader>b :ba<CR>
 nmap -builtin <Leader>f :fo<CR>
 nmap -builtin <Leader>d :ddg

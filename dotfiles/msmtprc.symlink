@@ -1,0 +1,24 @@
+defaults
+auth             login
+tls              off
+
+account barracuda
+auto_from on
+host    localhost
+port    1025
+user    pwoolcock
+domain  barracuda.com
+
+account woolcock.us
+auto_from on
+host    box.woolcock.us
+port    587
+user    paul
+tls     on
+domain woolcock.us
+
+
+account default : woolcock.us
+
+aliases /home/paul/mail/.aliases
+
