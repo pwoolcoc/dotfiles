@@ -57,8 +57,10 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupWrapping()
 au BufRead,BufNewFile *.json setlocal ft=javascript
 au BufRead,BufNewfile *.txt call s:setupWrapping()
 au BufRead,BufNewFile *.wsgi setlocal ft=python
+au BufRead,BufNewFile *.{c,cc,h,cpp} setlocal ft=cpp
 au BufNewFile,BufRead *.clj setlocal filetype=clojure
 au BufNewFile,BufRead *.{txt,md,markdown,mdown,mkd,mkdn} setlocal ft=markdown
+au BufNewFile,BufRead *.hx setlocal ft=haxe
 
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 au FileType make setlocal noexpandtab
@@ -67,6 +69,7 @@ au FileType markdown inoremap <buffer> `` “
 au FileType markdown inoremap <buffer> '' ”
 au FileType markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2 spell
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+au FileType cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 cmap <C-K> <C-R>=expand("%:p:h") . "/" <CR>
