@@ -14,3 +14,7 @@
     cleanall = clean -xfd
     dif = diff --patience
     st = status -uno
+
+[filter.ignoreline]
+    clean = "sed '/#ignoreline$/'d"
+    smudge = "cat"
